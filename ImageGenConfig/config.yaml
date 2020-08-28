@@ -293,7 +293,10 @@
         "path": "ImageGenConfig/camera_positions",
         "file_format": "location rotation/value",
         "default_cam_param": {
-          "fov": 1
+          "fov": 1,
+          "cam_K": [1122.375, 0, 514.53, 0, 1122.375, 406.8355, 0, 0, 1],
+          "resolution_x": 1032,
+          "resolution_y": 772
         }
       }
     },

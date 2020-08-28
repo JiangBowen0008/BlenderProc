@@ -1,4 +1,4 @@
-for i in $(seq 1 1)
+for i in $(seq 1 $1)
 do
     randport=$(python3 -S -c "import random; print(random.randrange(1,15))")
     echo $randport
