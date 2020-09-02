@@ -21,6 +21,16 @@
       }
     },
     {
+      "module": "loader.BlendLoader",
+      "config": {
+        "path": "ImageGenConfig/scene.blend",
+        "load_from": "/Collection",
+        "add_properties": {
+          "cp_physics": False
+        },
+      }
+    },
+    {
       "module": "loader.BopLoader",
       "config": {
         "bop_dataset_path": "<args:0>/tless",
@@ -117,11 +127,12 @@
       "module": "constructor.BasicMeshInitializer",
       "config": {
         "meshes_to_add": [
-        {
-          "type": "plane",
-          "name": "ground_plane0",
-          "scale": [2, 2, 1]
-        },
+        # {
+        #   "type": "plane",
+        #   "name": "ground_plane0",
+        #   "scale": [0.35, 0.6, 0.001],
+        #   "location": [0.35, 0, 0]
+        # },
         {
           "type": "plane",
           "name": "ground_plane1",
@@ -169,7 +180,6 @@
           }
         },
         "cp_physics": False,
-        
       }
     },
     {
@@ -235,8 +245,8 @@
         },
         "pos_sampler":{
               "provider": "sampler.Uniform3d",
-              "max": [0.05, 0.05, 5],
-              "min": [-0.05, -0.05, 0.1]
+              "max": [0.32, 0.0, 5],
+              "min": [0.28, 0.0, 0.1]
         },
         "rot_sampler":{
           "provider":"sampler.UniformSO3"
@@ -293,10 +303,10 @@
         "path": "ImageGenConfig/camera_positions",
         "file_format": "location rotation/value",
         "default_cam_param": {
-          "fov": 1,
-          "cam_K": [1122.375, 0, 514.53, 0, 1122.375, 406.8355, 0, 0, 1],
-          "resolution_x": 1032,
-          "resolution_y": 772
+          "fov": 1.0,
+          "cam_K": [1122.375, 0, 334.4445, 0, 1122.375, 264.443075, 0, 0, 1],
+          "resolution_x": 671, #1032
+          "resolution_y": 502 #772
         }
       }
     },
@@ -352,7 +362,7 @@
     {
       "module": "renderer.RgbRenderer",
       "config": {
-        "samples": 50,
+        "samples": 10,
         "render_distance": True,
         "image_type": "JPEG",
         "use_mist_distance": False
