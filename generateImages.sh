@@ -4,3 +4,4 @@ do
     echo $randport
     python3 run.py ImageGenConfig/config.yaml BOP lmo ../bop_toolkit resources/cctextures ../output $randport
 done
+python3 ../bop_toolkit/scripts/calc_gt_masks.py
