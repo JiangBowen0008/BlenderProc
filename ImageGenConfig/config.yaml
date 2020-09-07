@@ -70,6 +70,7 @@
         "add_properties": {
           "cp_physics": True
         },
+        "scale": 0.5,   # we set the default to 0.5
         "cf_set_shading": "SMOOTH"
       }
     },
@@ -183,6 +184,18 @@
       }
     },
     {
+      "module": "manipulators.EntityManipulator",
+      "config": {
+        "selector": {
+          "provider": "getter.Entity",
+          "conditions": {
+            "name": 'Box'
+          }
+        },
+        "cp_physics": False,
+      }
+    },
+    {
       "module": "manipulators.MaterialManipulator",
       "config": {
         "selector": {
@@ -245,8 +258,8 @@
         },
         "pos_sampler":{
               "provider": "sampler.Uniform3d",
-              "max": [0.32, 0.0, 5],
-              "min": [0.28, 0.0, 0.1]
+              "max": [0.43, 0.0, 5],
+              "min": [0.42, 0.0, 0.1]
         },
         "rot_sampler":{
           "provider":"sampler.UniformSO3"

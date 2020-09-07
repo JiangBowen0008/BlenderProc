@@ -39,6 +39,7 @@ class BopLoader(LoaderInterface):
        "obj_ids", "List of object ids to load. Type: list. Default: [] (all objects from the given BOP dataset if "
                   "scene_id is not specified)."
        "model_type", "Optionally, specify type of BOP model. Type: string. Default: "". Available: [reconst, cad or eval]."
+       "scale", "Scale of the loaded model. Default: 0.5."
     """
 
     def __init__(self, config):
@@ -63,7 +64,9 @@ class BopLoader(LoaderInterface):
             self.allow_duplication = False
         self.split = self.config.get_string("split", "test")
         self.model_type = self.config.get_string("model_type", "")
+        tempScale = self.config.get_float("scale", 0.5)
         self.scale = 0.001 if self.config.get_bool("mm2m", False) else 1
+        self.scale *= tempScale
         self.bop_dataset_name = os.path.basename(self.bop_dataset_path)
         self._has_external_texture = self.bop_dataset_name in ["ycbv", "ruapc"]
 
