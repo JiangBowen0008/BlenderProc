@@ -70,7 +70,7 @@
         "add_properties": {
           "cp_physics": True
         },
-        "scale": 0.5,   # we set the default to 0.5
+        "scale": 1.0,   # we set the default to 0.5
         "cf_set_shading": "SMOOTH"
       }
     },
