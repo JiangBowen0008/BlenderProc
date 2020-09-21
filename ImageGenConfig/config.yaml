@@ -15,8 +15,8 @@
       "module": "main.Initializer",
       "config": {
         "global": {
-          "output_dir": "<args:4>",
-          "sys_paths": ["<args:2>"]
+          "output_dir": "<args:7>",
+          "sys_paths": ["<args:5>"]
         }
       }
     },
@@ -33,39 +33,27 @@
     {
       "module": "loader.BopLoader",
       "config": {
-        "bop_dataset_path": "<args:0>/tless",
-        "model_type": "cad",
-        "mm2m": True,
-        "sample_objects": True,
-        "num_of_objs_to_sample": 0,
-        "add_properties": {
-          "cp_physics": True
-        }
-      }
-    },
-    {
-      "module": "loader.BopLoader",
-      "config": {
-        "bop_dataset_path": "<args:0>/lm",
+        "bop_dataset_path": "<args:0>/<args:1>",
         "model_type": "",
         "mm2m": True,
         "sample_objects": True,
-        "num_of_objs_to_sample": 0,
-        "obj_instances_limit": 1,
+        "num_of_objs_to_sample": <args:2>,
+        "obj_instances_limit": -1,
         "add_properties": {
           "cp_physics": True
         },
+        "scale": 1.0,   # we set the default to 0.5
         "cf_set_shading": "SMOOTH"
       }
     },
     {
       "module": "loader.BopLoader",
       "config": {
-        "bop_dataset_path": "<args:0>/<args:1>",
+        "bop_dataset_path": "<args:0>/<args:3>",
         "model_type": "",
         "mm2m": True,
         "sample_objects": True,
-        "num_of_objs_to_sample": <args:5>,
+        "num_of_objs_to_sample": <args:4>,
         "obj_instances_limit": -1,
         "add_properties": {
           "cp_physics": True
@@ -107,6 +95,9 @@
           },
           {
             "name": "bop_<args:1>_vertex_col_material.*"
+          },
+          {
+            "name": "bop_<args:3>_vertex_col_material.*"
           }
           ]
         },
@@ -222,7 +213,7 @@
     {
       "module": "loader.CCMaterialLoader",
       "config": {
-        "folder_path": "<args:3>"
+        "folder_path": "<args:6>"
       }
     },
     {
