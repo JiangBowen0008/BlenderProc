@@ -1,3 +1,4 @@
+export PYTHONPATH=$PYTHONPATH:../bop_toolkit
 for i in $(seq 1 $1)
 do
     randport1=$(python3 -S -c "import random; print(random.randrange(1,15))")
