@@ -157,8 +157,9 @@ class BopWriter(WriterInterface):
                 if obj["bop_dataset_name"] == self.dataset:
                     self.dataset_objects.append(obj)
                 elif self.dataset == "custom-comb":
-                    obj["bop_dataset_name"] = "custom-comb"
-                    self.dataset_objects.append(obj)
+                    if obj["bop_dataset_name"] in ["custom-grasp", "custom-suction"]:
+                        obj["bop_dataset_name"] = "custom-comb"
+                        self.dataset_objects.append(obj)
 
         # Check if there is any object from the specified dataset.
         if not self.dataset_objects:
