@@ -375,7 +375,7 @@
     {
       "module": "writer.BopWriter",
       "config": {
-        "dataset": "<args:1>",
+        "dataset": "custom-comb",
         "append_to_existing_output": True,
         "postprocessing_modules": {
           "distance": [
