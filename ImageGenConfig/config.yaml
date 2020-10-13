@@ -249,8 +249,8 @@
         },
         "pos_sampler":{
               "provider": "sampler.Uniform3d",
-              "max": [0.43, 0.0, 5],
-              "min": [0.42, 0.0, 0.1]
+              "max": [0.575, 0.15, 1],
+              "min": [0.325, -0.15, 0.15]
         },
         "rot_sampler":{
           "provider":"sampler.UniformSO3"
@@ -301,11 +301,36 @@
         ]
       }
     },
+    # {
+    #   "module": "camera.CameraLoader",
+    #   "config": {
+    #     "path": "ImageGenConfig/camera_positions",
+    #     "file_format": "location rotation/value",
+    #     "default_cam_param": {
+    #       "fov": 1.0,
+    #       "cam_K": [1122.375, 0, 334.4445, 0, 1122.375, 264.443075, 0, 0, 1],
+    #       "resolution_x": 671, #1032
+    #       "resolution_y": 502 #772
+    #     }
+    #   }
+    # },
     {
-      "module": "camera.CameraLoader",
+      "module": "camera.CameraSampler",
       "config": {
-        "path": "ImageGenConfig/camera_positions",
-        "file_format": "location rotation/value",
+        "cam_poses": [
+          {
+            "number_of_samples": 1,
+            "location": {
+              "provider":"sampler.Uniform3d",
+              "max":[0.4431, -0.230894, 1.33803],
+              "min":[0.3431, -0.330894, 1.33803]
+            },
+            "rotation": {
+              "format": "euler",
+              "value": [-0.0047414981311784225, 0.16891201024881314, -1.5604671469044196]
+            }
+          }
+        ],
         "default_cam_param": {
           "fov": 1.0,
           "cam_K": [1122.375, 0, 334.4445, 0, 1122.375, 264.443075, 0, 0, 1],
