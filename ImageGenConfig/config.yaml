@@ -116,65 +116,6 @@
       }
     },
     {
-      "module": "constructor.BasicMeshInitializer",
-      "config": {
-        "meshes_to_add": [
-        # {
-        #   "type": "plane",
-        #   "name": "ground_plane0",
-        #   "scale": [0.35, 0.6, 0.001],
-        #   "location": [0.35, 0, 0]
-        # },
-        {
-          "type": "plane",
-          "name": "ground_plane1",
-          "scale": [2, 2, 1],
-          "location": [0, -2, 2],
-          "rotation": [-1.570796, 0, 0] # switch the sign to turn the normals to the outside
-        },
-        {
-          "type": "plane",
-          "name": "ground_plane2",
-          "scale": [2, 2, 1],
-          "location": [0, 2, 2],
-          "rotation": [1.570796, 0, 0]
-        },
-        {
-          "type": "plane",
-          "name": "ground_plane4",
-          "scale": [2, 2, 1],
-          "location": [2, 0, 2],
-          "rotation": [0, -1.570796, 0]
-        },
-        {
-          "type": "plane",
-          "name": "ground_plane5",
-          "scale": [2, 2, 1],
-          "location": [-2, 0, 2],
-          "rotation": [0, 1.570796, 0]
-        },
-        {
-          "type": "plane",
-          "name": "light_plane",
-          "location": [0, 0, 10],
-          "scale": [3, 3, 1]
-        }
-        ]
-      }
-    },
-    {
-      "module": "manipulators.EntityManipulator",
-      "config": {
-        "selector": {
-          "provider": "getter.Entity",
-          "conditions": {
-            "name": '.*plane.*'
-          }
-        },
-        "cp_physics": False,
-      }
-    },
-    {
       "module": "manipulators.EntityManipulator",
       "config": {
         "selector": {
@@ -249,8 +190,8 @@
         },
         "pos_sampler":{
               "provider": "sampler.Uniform3d",
-              "max": [0.43, 0.0, 5],
-              "min": [0.42, 0.0, 0.1]
+              "max": [0.50, -0.2, 3],
+              "min": [0.30, 0.2, 0.1]
         },
         "rot_sampler":{
           "provider":"sampler.UniformSO3"
